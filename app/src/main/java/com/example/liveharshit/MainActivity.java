@@ -68,7 +68,11 @@ public class MainActivity extends AppCompatActivity {
             price = (quantity*3);
             items = "Whipped cream and chocolate";
         }
-        String priceMethod = "Name: "+name+"\n"+"Items: "+items+"\n"+"Quantity: "+quantity+"\n"+"Price: $"+price+"\n"+"Thank you!";
+        String priceMethod = null;
+        if(name!=""&&(whippedCream.isChecked()||chocolate.isChecked())&&price!=0) {
+            priceMethod = "Name: " + name + "\n" + "Items: " + items + "\n" + "Quantity: " + quantity + "\n" + "Price: $" + price + "\n" + "Thank you!";
+        }
+        else priceMethod = "Please fill all!";
         displayMessage(priceMethod);
     }
 
