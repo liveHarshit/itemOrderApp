@@ -56,23 +56,23 @@ public class MainActivity extends AppCompatActivity {
         CheckBox chocolate = (CheckBox)findViewById(R.id.chocolate);
         String items = null;
         if (whippedCream.isChecked()) {
-            price = (quantity*1);
+            price = (quantity*6);
             items = "Whipped cream";
         }
         if(chocolate.isChecked()) {
-            price=(quantity*2);
+            price=(quantity*7);
             items = "Chocolate";
 
         }
         if (whippedCream.isChecked()&&chocolate.isChecked()) {
-            price = (quantity*3);
+            price = (quantity*8);
             items = "Whipped cream and chocolate";
         }
         String priceMethod = null;
-        if(name!=""&&(whippedCream.isChecked()||chocolate.isChecked())&&price!=0) {
-            priceMethod = "Name: " + name + "\n" + "Items: " + items + "\n" + "Quantity: " + quantity + "\n" + "Price: $" + price + "\n" + "Thank you!";
+        if(name!=""&&price!=0) {
+            priceMethod = "ODDER SUMMERY\nName: " + name + "\n" + "Toppings: " + items + "\n" + "Quantity: " + quantity + "\n" + "Price: $" + price + "\n" + "Thank you!";
         }
-        else priceMethod = "Please fill all!";
+        else priceMethod = "Error!\nPlease fill all.";
         displayMessage(priceMethod);
     }
 
